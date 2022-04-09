@@ -14,10 +14,12 @@ public class IntToRoman {
                 "M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"
         };
         StringBuilder result = new StringBuilder();
+        String string;
 
             for (int i = 0; i < array.length; i++) {
                 while (num >= array[i]) {
                     num -= array[i];
+                    // string += strs[i]  // 效率低
                     result.append(strs[i]);
                 }
             }

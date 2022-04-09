@@ -64,19 +64,19 @@ public class BashballGame {
         int sum = 0;
         int flag = 0;
         List<Integer> array = new ArrayList<>();
-        for (int i = 0; i < ops.length; i++) {
-            if (add.equals(ops[i])) {
+        for (String op : ops) {
+            if (add.equals(op)) {
                 array.add(array.get(flag) + array.get(flag - 1));
                 flag++;
-            } else if (subtract.equals(ops[i])) {
+            } else if (subtract.equals(op)) {
                 array.remove(flag);
                 flag = flag - 1;
-            } else if (dou.equals(ops[i])) {
+            } else if (dou.equals(op)) {
                 sum = array.get(flag) * 2;
                 array.add(sum);
                 flag++;
             } else {
-                array.add(Integer.parseInt(ops[i]));
+                array.add(Integer.parseInt(op));
                 flag = array.size() - 1;
             }
         }
